@@ -1,0 +1,93 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgb(34, 25, 25);
+  flex-wrap: wrap;
+  color: white;
+}
+.header .logo {
+  margin: 0;
+  padding: 0;
+}
+.nav-container .nav-close {
+  display: none;
+}
+.header .nav-container {
+  padding: 0;
+  margin: 0;
+}
+.header .nav-container .nav-content {
+  display: flex;
+}
+
+.header .nav-container .nav-content a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.header-menu {
+  display: none;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  pointer-events: none;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    top: 0;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .nav-container {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(43, 41, 41);
+    height: 100vh;
+    width: 0;
+    pointer-events: none;
+    transition: width 300ms ease-in-out;
+  }
+  .nav-container .nav-close {
+    display: block;
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    margin: 5px;
+    margin-left: auto;
+    border: none;
+    color: white;
+  }
+  .nav-container .nav-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .nav-container .nav-content a {
+    padding: 0px 0 10px 0;
+    border-bottom: 0.1em solid;
+  }
+  .header-menu {
+    display: block;
+    pointer-events: all;
+  }
+  .active {
+    opacity: 1;
+    pointer-events: all;
+    width: 100%;
+  }
+}
